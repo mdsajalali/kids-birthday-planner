@@ -61,7 +61,7 @@ const Footer = () => {
       </div>
 
       <p className="text-center py-10 text-[16px] text-white">
-        Copyright © {year} BeeParty, All rights reserved. Powered{" "}
+        Copyright © {year} BeeParty, All rights reserved. Powered by {""}
         <a href="https://www.linkedin.com/in/mdsajalali/" className="underline">
           Md. Sajal Ali
         </a>
