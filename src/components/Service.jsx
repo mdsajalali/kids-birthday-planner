@@ -9,7 +9,7 @@ const Service = ({ service }) => {
         <h1 className="text-2xl text-[#3F444B] font-semibold">{title}</h1>
         <p className="w-72 mx-auto text-[#A7A9AC] my-2">{desc}</p>
         <p className="font-bold text-2xl my-2">${price}</p>
-        <Link to={`services/${id}`}>
+        <Link to={`service/${id}`}>
           <button className="bg-yellow-500 rounded-lg  transition ease-in px-4 py-2 hover:bg-[#ABCE4E] text-white mt-2 mb-5">
             BOOK NOW!
           </button>
