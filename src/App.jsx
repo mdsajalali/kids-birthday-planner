@@ -14,7 +14,6 @@ import Wishing from "./pages/Wishing/Wishing";
 const App = () => {
   return (
     <div>
-      <Navbar />
       <Hero />
       <About />
       <Client />
@@ -25,7 +24,6 @@ const App = () => {
       <Greeting />
       <Testimonial />
       <Supports />
-      <Footer />
     </div>
   );
 };

@@ -10,3 +10,8 @@
 body {
   font-family: "Fredoka", sans-serif;
 }
+
+
+a.active {
+  color: #ABCE4E;
+}

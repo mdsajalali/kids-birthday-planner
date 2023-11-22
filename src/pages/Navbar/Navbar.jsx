@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo_beeparty.png";
 import Button from "../../components/Button";
 
@@ -12,7 +13,9 @@ const Navbar = () => {
       <div className="mx-auto flex max-w-[1280px] items-center justify-between md:flex ">
         <div className="flex justify-between">
           <div className="w-40">
-            <img src={logo} alt="Logo" />
+            <Link to="/">
+              <img src={logo} alt="Logo" />
+            </Link>
           </div>
         </div>
         <nav
@@ -22,24 +25,36 @@ const Navbar = () => {
         >
           <ul className="my-5 gap-5 md:my-0 md:flex text-[18px] font-semibold">
             <li>
-              <a href="#" className="hover:text-[#ABCE4E]  transition ease-in ">
+              <NavLink
+                to="/"
+                className="hover:text-[#ABCE4E]  transition ease-in "
+              >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="#" className="hover:text-[#ABCE4E]  transition ease-in ">
+              <NavLink
+                to="/about"
+                className="hover:text-[#ABCE4E]  transition ease-in "
+              >
                 About Us
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="#" className="hover:text-[#ABCE4E]  transition ease-in ">
+              <NavLink
+                to="/services"
+                className="hover:text-[#ABCE4E]  transition ease-in "
+              >
                 Services
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="#" className="hover:text-[#ABCE4E]  transition ease-in ">
+              <NavLink
+                to="/contact"
+                className="hover:text-[#ABCE4E]  transition ease-in "
+              >
                 Contact Us
-              </a>
+              </NavLink>
             </li>
           </ul>
           <div className="text-white">
