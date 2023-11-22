@@ -3,6 +3,7 @@ import Navbar from "./pages/Navbar/Navbar"
 import About from './pages/About/About';
 import Client from "./pages/Client/Client";
 import Services from "./pages/Services/Services";
+import Wishing from "./pages/Wishing/Wishing";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
      <About />
      <Client />
      <Services />
+     <Wishing />
     </div>
   )
 }
