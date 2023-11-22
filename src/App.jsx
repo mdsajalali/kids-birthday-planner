@@ -5,6 +5,7 @@ import Client from "./pages/Client/Client";
 import Services from "./pages/Services/Services";
 import Wishing from "./pages/Wishing/Wishing";
 import Contact from "./pages/Contact/Contact";
+import WhyChooseUs from "./pages/WhyChooseUs/WhyChooseUs";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
      <Services />
      <Wishing />
      <Contact />
+     <WhyChooseUs />
     </div>
   )
 }
