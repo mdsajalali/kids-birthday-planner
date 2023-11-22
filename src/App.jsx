@@ -1,6 +1,7 @@
 import About from "./pages/About/About";
 import Client from "./pages/Client/Client";
 import Contact from "./pages/Contact/Contact";
+import Footer from "./pages/Footer/Footer";
 import Greeting from "./pages/Greeting/Greeting";
 import Hero from "./pages/Hero/Hero";
 import Navbar from "./pages/Navbar/Navbar";
@@ -24,6 +25,7 @@ const App = () => {
       <Greeting />
       <Testimonial />
       <Supports />
+      <Footer />
     </div>
   );
 };
