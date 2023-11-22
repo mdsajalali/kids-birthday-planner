@@ -56,6 +56,22 @@ const Navbar = () => {
                 Contact Us
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/login"
+                className="hover:text-[#ABCE4E]  transition ease-in "
+              >
+                Login
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/register"
+                className="hover:text-[#ABCE4E]  transition ease-in "
+              >
+                Register
+              </NavLink>
+            </li>
           </ul>
           <div className="text-white">
             <Button title="GET STARTED" />

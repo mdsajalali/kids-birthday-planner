@@ -4,7 +4,7 @@ const Supports = () => {
   return (
     <div className="xl:container mx-auto p-10 my-20 bg-[#FFECC6] rounded-lg pt-20 pb-10">
       <div className="text-center">
-        <h1 className="text-yellow-400 text-2xl font-thin uppercase">
+        <h1 className="text-yellow-600 text-2xl font-thin uppercase">
           Support
         </h1>
         <h2 className="text-5xl font-bold my-2">Preferred Vendor List</h2>
