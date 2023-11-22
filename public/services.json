@@ -22,14 +22,14 @@
   },
   {
     "id": 4,
-    "img": "",
+    "img": "https://i.ibb.co/N9svBFf/theme.jpg",
     "title": "Theme Party",
     "price": 200,
     "desc": "Lorem ipsum dolor sit amet consectetur adipiscing elit dolor"
   },
   {
     "id": 5,
-    "img": "https://i.ibb.co/N9svBFf/theme.jpg",
+    "img": "https://i.ibb.co/zmQRwmr/family.jpg",
     "title": "Family Party",
     "price": 300,
     "desc": "Lorem ipsum dolor sit amet consectetur adipiscing elit dolor"

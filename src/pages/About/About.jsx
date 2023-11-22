@@ -18,7 +18,7 @@ const About = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
           </p>
-          <div className="font-nunito">
+          <div className="font-nunito text-white">
             <Button title="DISCOVER MORE" />
           </div>
         </div>
