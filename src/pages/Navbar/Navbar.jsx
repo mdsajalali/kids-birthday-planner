@@ -1,4 +1,5 @@
 import logo from "../../assets/images/logo_beeparty.png";
+import Button from "../../components/Button";
 
 const Navbar = () => {
   return (
@@ -23,10 +24,8 @@ const Navbar = () => {
                 <a href="#">Contact Us</a>
               </li>
             </ul>
-            <div>
-              <button className="bg-yellow-500 rounded-lg py-2 px-4 text-white font-normal">
-                GET STARTED
-              </button>
+            <div className="text-white">
+              <Button title="GET STARTED" />
             </div>
           </nav>
         </div>
