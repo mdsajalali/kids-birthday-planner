@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "fredoka": ["Fredoka", "sans - serif"],
+        "nunito" : ['Nunito Sans', "sans-serif"]
+      },
+    },
   },
   plugins: [],
 };
