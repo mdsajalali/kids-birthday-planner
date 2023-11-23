@@ -2,8 +2,13 @@ import { Link } from "react-router-dom";
 import github from "../../assets/images/github.png";
 import google from "../../assets/images/google.png";
 import signupImg from "../../assets/images/signup.jpg";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { useState } from "react";
+
 
 const Register = () => {
+    const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div className="flex">
       <div className="flex-1 hidden xl:block">
@@ -30,12 +35,21 @@ const Register = () => {
               placeholder="Enter your email..."
               name="email"
             />
-            <input
-              className="p-2 w-full outline-none border-none rounded-sm"
-              type="password"
-              placeholder="Password..."
-              name="password"
-            />
+            <div className="relative">
+              <input
+                className="w-full p-2 "
+                type={showPassword ? "text" : "password"}
+                name="password"
+                placeholder="Password..."
+                required
+              />
+              <span
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute top-3 right-2 cursor-pointer"
+              >
+                {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+              </span>
+            </div>
 
             <input
               className="w-full bg-yellow-500 hover:bg-[#ABCE4E]   ease-in-out text-white py-2 my-4 rounded-sm cursor-pointer hover:space-x-2 hover:tracking-wide transition-all"

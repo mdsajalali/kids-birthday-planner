@@ -1,9 +1,13 @@
+import { useState } from "react";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import github from "../../assets/images/github.png";
 import google from "../../assets/images/google.png";
 import loginImg from "../../assets/images/login.jpg";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div className="flex">
       <div className="flex-1  hidden xl:block">
@@ -24,12 +28,21 @@ const Login = () => {
               placeholder="Enter your email..."
               name="email"
             />
-            <input
-              className="p-2 w-full outline-none border-none rounded-sm"
-              type="password"
-              placeholder="Password..."
-              name="password"
-            />
+            <div className="relative">
+              <input
+                className="w-full p-2 "
+                type={showPassword ? "text" : "password"}
+                name="password"
+                placeholder="Password..."
+                required
+              />
+              <span
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute top-3 right-2 cursor-pointer"
+              >
+                {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+              </span>
+            </div>
 
             <div className="mt-4 font-semibold underline">
               <Link>Forget Password?</Link>

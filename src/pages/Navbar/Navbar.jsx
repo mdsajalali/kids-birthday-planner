@@ -4,6 +4,7 @@ import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo_beeparty.png";
 import Button from "../../components/Button";
+import user from "../../assets/images/user.png"
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -71,6 +72,9 @@ const Navbar = () => {
               >
                 Register
               </NavLink>
+            </li>
+            <li>
+                <img className="w-10 rounded-full" src={user} alt="user" />
             </li>
           </ul>
           <div className="text-white">
