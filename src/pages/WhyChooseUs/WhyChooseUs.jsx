@@ -1,5 +1,5 @@
 import { WhyChooseUs as data } from "../../../public/data";
-import ChooseUs from "../../components/chooseUs";
+import ChooseUs from "../../components/ChooseUs";
 const WhyChooseUs = () => {
   return (
     <div className="xl:container mx-auto p-4 my-20">
