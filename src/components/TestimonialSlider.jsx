@@ -39,7 +39,6 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <div className="overflow-hidden">
       <Slide direction="up" cascade>
         <div className="mt-14">
           <Slider {...sliderSettings}>
@@ -66,7 +65,6 @@ const TestimonialSlider = () => {
           </Slider>
         </div>
       </Slide>
-    </div>
   );
 };
 

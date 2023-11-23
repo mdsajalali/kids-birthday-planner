@@ -28,7 +28,7 @@ const Navbar = () => {
           </div>
         </div>
         <nav
-          className={`absolute top-[70px]  list-none items-center gap-5 rounded-lg bg-[#343537] px-20 pb-10 text-center text-white shadow-lg md:static md:left-[40%]   md:flex md:rounded-none md:bg-transparent md:p-0 md:text-black   md:shadow-none ${
+          className={`absolute top-[70px]  list-none items-center gap-5 rounded-lg bg-[#343537] px-20 pb-10 text-center text-white shadow-lg md:static md:left-[40%] z-50  md:flex md:rounded-none md:bg-transparent md:p-0 md:text-black   md:shadow-none ${
             click ? "" : "left-[-100%] md:left-0"
           }`}
         >
