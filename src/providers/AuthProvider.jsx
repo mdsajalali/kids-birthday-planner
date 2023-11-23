@@ -13,7 +13,6 @@ import app from "../firebase/firebase.config";
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
-
 const auth = getAuth(app);
 
 export const AuthContext = createContext(null);

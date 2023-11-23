@@ -24,7 +24,6 @@ const Login = () => {
         console.log(result);
         navigate(location?.state ? location.state : "/");
         successToast("Welcome to Home Page 🎉");
-
       })
       .catch((error) => {
         errorToast(error.message);
@@ -74,6 +73,7 @@ const Login = () => {
               type="email"
               placeholder="Enter your email..."
               name="email"
+              required
             />
             <div className="relative">
               <input

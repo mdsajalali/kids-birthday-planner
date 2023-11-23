@@ -1,3 +1,4 @@
+import { updateProfile } from "firebase/auth";
 import { useContext, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
@@ -16,13 +17,21 @@ const Register = () => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const name = form.get("name");
-    const photo = form.get("photo");
     const email = form.get("email");
     const password = form.get("password");
-    console.log(name, photo, email, password);
 
     createUser(email, password)
       .then((result) => {
+        updateProfile(result.user, {
+          displayName: name,
+          photoURL: "https://i.ibb.co/QXbhtw0/user.png",
+        })
+          .then(() => {
+            console.log("Profile updated");
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
         console.log(result);
         navigate("/login");
         e.target.reset();
@@ -74,12 +83,14 @@ const Register = () => {
               type="text"
               placeholder="Enter your name..."
               name="name"
+              required
             />
             <input
               className="p-2 my-5 w-full outline-none border-none rounded-sm"
               type="email"
               placeholder="Enter your email..."
               name="email"
+              required
             />
             <div className="relative">
               <input
