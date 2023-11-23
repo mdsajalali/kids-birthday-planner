@@ -14,5 +14,6 @@
 - [x] REACT-TOASTIFY
 - [x] REACT-AWESOME-REVEAL
 - [x] REACT-SLICK
+- [x] REACT-CAROUSEL
 
 #### Kids Birthday Planner Website : [Kids-Birthday-Planner](https://kids-birthday-planner.vercel.app/)

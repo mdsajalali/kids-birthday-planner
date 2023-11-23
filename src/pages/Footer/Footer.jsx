@@ -59,7 +59,7 @@ const Footer = () => {
                 type="email"
                 placeholder="Email"
               />
-              <div className="mt-4">
+              <div className="mt-4 text-white">
                 <Button title="SIGN UP" />
               </div>
             </div>
@@ -67,15 +67,12 @@ const Footer = () => {
         </div>
       </div>
 
-        <p className="text-center py-10 text-[16px] text-white">
-          Copyright © {year} BeeParty, All rights reserved. Powered by {""}
-          <a
-            href="https://www.linkedin.com/in/mdsajalali/"
-            className="underline"
-          >
-            Md. Sajal Ali
-          </a>
-        </p>
+      <p className="text-center py-10 text-[16px] text-white">
+        Copyright © {year} BeeParty, All rights reserved. Powered by {""}
+        <a href="https://www.linkedin.com/in/mdsajalali/" className="underline">
+          Md. Sajal Ali
+        </a>
+      </p>
     </footer>
   );
 };
