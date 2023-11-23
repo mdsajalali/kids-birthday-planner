@@ -22,7 +22,7 @@ const Services = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 mt-20 place-items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 mt-10 place-items-center">
         {services.map((service) => (
           <Service key={service.id} service={service} />
         ))}

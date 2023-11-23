@@ -9,9 +9,9 @@
 
 body {
   font-family: "Fredoka", sans-serif;
+  overflow-x: hidden;
 }
 
-
 a.active {
-  color: #ABCE4E;
+  color: #abce4e;
 }

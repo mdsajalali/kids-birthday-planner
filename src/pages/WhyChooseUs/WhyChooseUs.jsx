@@ -1,6 +1,6 @@
-import { WhyChooseUs as data} from "../../../public/data";
+import { WhyChooseUs as data } from "../../../public/data";
 import ChooseUs from "../../components/chooseUs";
-const WhyChooseUs = () => { 
+const WhyChooseUs = () => {
   return (
     <div className="xl:container mx-auto p-4 my-20">
       <div className="text-center">
@@ -21,6 +21,6 @@ const WhyChooseUs = () => {
       </div>
     </div>
   );
-}
+};
 
-export default WhyChooseUs
+export default WhyChooseUs;

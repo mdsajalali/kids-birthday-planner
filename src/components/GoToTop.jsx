@@ -25,18 +25,18 @@ const GoToTop = () => {
     return () => window.removeEventListener("scroll", listenToScroll);
   });
   return (
-    <>
+    <div>
       {isVisible && (
         <div className="fixed bottom-5 right-5">
           <h1
             onClick={goToBtn}
-            className="bg-[#FFECC6] p-4 rounded-full cursor-pointer  animate-bounce transition-transform duration-300 ease-in-out"
+            className="bg-[#FFECC6] hover:bg-[#b8fa03] p-4 rounded-full cursor-pointer  animate-bounce transition-transform duration-300 ease-in-out"
           >
             <FaArrowUp size={20} />
           </h1>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
