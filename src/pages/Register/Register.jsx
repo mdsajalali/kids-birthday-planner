@@ -1,13 +1,58 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom";
 import github from "../../assets/images/github.png";
 import google from "../../assets/images/google.png";
 import signupImg from "../../assets/images/signup.jpg";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { useState } from "react";
-
+import { AuthContext } from "./../../providers/AuthProvider";
 
 const Register = () => {
-    const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const { createUser, googleLogin, githubLogin } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const name = form.get("name");
+    const photo = form.get("photo");
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(name, photo, email, password);
+
+    createUser(email, password)
+      .then((result) => {
+        console.log(result);
+        navigate("/login");
+        e.target.reset();
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+        alert("Google Login Successful");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+  const handleGithubLogin = () => {
+    githubLogin()
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+        alert("Github Login Successful");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
 
   return (
     <div className="flex">
@@ -22,7 +67,7 @@ const Register = () => {
         <div className="flex flex-col  justify-center min-h-screen   mx-auto md:w-[600px] w-[350px] sm:w-[450px]">
           <h1 className="text-3xl text-yellow-500 font-semibold">Register</h1>
           <p className="my-3 ">Welcome Back! Please enter your details.</p>
-          <form>
+          <form onSubmit={handleRegister}>
             <input
               className="p-2 w-full outline-none border-none rounded-sm"
               type="text"
@@ -63,11 +108,17 @@ const Register = () => {
             <div className="w-1/2 h-[1px] bg-slate-400"></div>
           </div>
           <div>
-            <div className="flex items-center justify-center gap-1 bg-white border border-black rounded-sm p-1 my-5 cursor-pointer hover:tracking-wide transition-all ">
+            <div
+              onClick={handleGoogleLogin}
+              className="flex items-center justify-center gap-1 bg-white border border-black rounded-sm p-1 my-5 cursor-pointer hover:tracking-wide transition-all "
+            >
               <img className="w-10" src={google} alt="Google" />
               <p className="text-[18px] font-semibold">Sign In With Google</p>
             </div>
-            <div className="flex items-center justify-center gap-2 bg-white border border-black rounded-sm p-1 my-5 cursor-pointer hover:tracking-wide transition-all">
+            <div
+              onClick={handleGithubLogin}
+              className="flex items-center justify-center gap-2 bg-white border border-black rounded-sm p-1 my-5 cursor-pointer hover:tracking-wide transition-all"
+            >
               <img className="w-8" src={github} alt="Github" />{" "}
               <span className="text-[18px] font-semibold">
                 Sign In With Github

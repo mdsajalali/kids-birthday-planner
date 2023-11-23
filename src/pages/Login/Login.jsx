@@ -1,12 +1,56 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import github from "../../assets/images/github.png";
 import google from "../../assets/images/google.png";
 import loginImg from "../../assets/images/login.jpg";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const { logIn, googleLogin, githubLogin } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    console.log(form.get("email"));
+    const email = form.get("email");
+    const password = form.get("password");
+    logIn(email, password)
+      .then((result) => {
+        console.log(result);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+        alert("Google Login Successful");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+
+  const handleGithubLogin = () => {
+    githubLogin()
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+        alert("Github Login Successful");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
 
   return (
     <div className="flex">
@@ -21,7 +65,7 @@ const Login = () => {
         <div className="flex flex-col  justify-center min-h-screen md:w-[600px] w-[350px] sm:w-[450px] mx-auto">
           <h1 className="text-3xl font-semibold text-yellow-500">Login</h1>
           <p className="my-3 ">Welcome Back! Please enter your details.</p>
-          <form>
+          <form onSubmit={handleLogin}>
             <input
               className="p-2 mb-5 mt-2 w-full outline-none border-none rounded-sm"
               type="email"
@@ -60,11 +104,17 @@ const Login = () => {
             <div className="w-1/2 h-[1px] bg-slate-400"></div>
           </div>
           <div>
-            <div className="flex items-center justify-center gap-1 bg-white border border-black rounded-sm p-1 my-5 cursor-pointer hover:tracking-wide transition-all ">
+            <div
+              onClick={handleGoogleLogin}
+              className="flex items-center justify-center gap-1 bg-white border border-black rounded-sm p-1 my-5 cursor-pointer hover:tracking-wide transition-all "
+            >
               <img className="w-10" src={google} alt="Google" />
               <p className="text-[18px] font-semibold">Sign In With Google</p>
             </div>
-            <div className="flex items-center justify-center gap-2 bg-white border border-black rounded-sm p-1 my-5 cursor-pointer hover:tracking-wide transition-all">
+            <div
+              onClick={handleGithubLogin}
+              className="flex items-center justify-center gap-2 bg-white border border-black rounded-sm p-1 my-5 cursor-pointer hover:tracking-wide transition-all"
+            >
               <img className="w-8" src={github} alt="Github" />{" "}
               <span className="text-[18px] font-semibold">
                 Sign In With Github

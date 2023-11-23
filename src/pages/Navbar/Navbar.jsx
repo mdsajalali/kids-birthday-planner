@@ -1,13 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo_beeparty.png";
 import Button from "../../components/Button";
-import user from "../../assets/images/user.png"
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
+
+  const { user, logOut } = useContext(AuthContext);
+
+  const signOut = () => {
+    logOut().then().catch();
+  };
 
   return (
     <div className="bg-[#FFECC6] p-4 shadow-lg">
@@ -57,25 +63,16 @@ const Navbar = () => {
                 Contact Us
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/login"
-                className="hover:text-[#ABCE4E]  transition ease-in "
-              >
-                Login
+
+            {user ? (
+              <button className="btn" onClick={signOut}>
+                Sign Out
+              </button>
+            ) : (
+              <NavLink to="/login">
+                <button className="btn">Login</button>
               </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/register"
-                className="hover:text-[#ABCE4E]  transition ease-in "
-              >
-                Register
-              </NavLink>
-            </li>
-            <li>
-                <img className="w-10 rounded-full" src={user} alt="user" />
-            </li>
+            )}
           </ul>
           <div className="text-white">
             <Button title="GET STARTED" />
