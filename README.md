@@ -1,8 +1,15 @@
-# React + Vite
+# Kids Birthday Planner Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Responsive Kids Birthday Planner Website
 
-Currently, two official plugins are available:
+## Used Technology
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [x] HTML
+- [x] TAILWINDCSS
+- [x] REACT.JS
+- [x] CONTEXT API
+- [x] FIREBASE
+- [x] REACT ROUTER DOM
+- [x] REACT-ICON
+
+#### Kids Birthday Planner Website : [Kids-Birthday-Planner](https://kids-birthday-planner.vercel.app/)
