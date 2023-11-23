@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import github from "../../assets/images/github.png";
 import google from "../../assets/images/google.png";
 import signupImg from "../../assets/images/signup.jpg";
+import { errorToast, successToast } from "../../utils/Toast";
 import { AuthContext } from "./../../providers/AuthProvider";
 
 const Register = () => {
@@ -27,7 +28,7 @@ const Register = () => {
         e.target.reset();
       })
       .catch((error) => {
-        alert(error.message);
+        errorToast(error.message);
       });
   };
 
@@ -36,10 +37,10 @@ const Register = () => {
       .then((result) => {
         console.log(result.user);
         navigate("/");
-        alert("Google Login Successful");
+        successToast("Welcome to Home Page 🎉");
       })
       .catch((error) => {
-        alert(error.message);
+        errorToast(error.message);
       });
   };
   const handleGithubLogin = () => {
@@ -47,10 +48,10 @@ const Register = () => {
       .then((result) => {
         console.log(result.user);
         navigate("/");
-        alert("Github Login Successful");
+        successToast("Welcome to Home Page 🎉");
       })
       .catch((error) => {
-        alert(error.message);
+        errorToast(error.message);
       });
   };
 

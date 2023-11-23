@@ -5,6 +5,7 @@ import github from "../../assets/images/github.png";
 import google from "../../assets/images/google.png";
 import loginImg from "../../assets/images/login.jpg";
 import { AuthContext } from "../../providers/AuthProvider";
+import { errorToast, successToast } from "../../utils/Toast";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -22,9 +23,11 @@ const Login = () => {
       .then((result) => {
         console.log(result);
         navigate(location?.state ? location.state : "/");
+        successToast("Welcome to Home Page 🎉");
+
       })
       .catch((error) => {
-        alert(error.message);
+        errorToast(error.message);
       });
   };
 
@@ -33,10 +36,10 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         navigate("/");
-        alert("Google Login Successful");
+        successToast("Welcome to Home Page 🎉");
       })
       .catch((error) => {
-        alert(error.message);
+        errorToast(error.message);
       });
   };
 
@@ -45,10 +48,10 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         navigate("/");
-        alert("Github Login Successful");
+        successToast("Welcome to Home Page 🎉");
       })
       .catch((error) => {
-        alert(error.message);
+        errorToast(error.message);
       });
   };
 

@@ -5,6 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo_beeparty.png";
 import Button from "../../components/Button";
 import { AuthContext } from "../../providers/AuthProvider";
+import { successToast } from "./../../utils/Toast";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -12,6 +13,7 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const signOut = () => {
+    successToast("Log Out Successfully 😢");
     logOut().then().catch();
   };
 
