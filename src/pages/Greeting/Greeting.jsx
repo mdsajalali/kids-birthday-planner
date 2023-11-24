@@ -22,7 +22,7 @@ const Greeting = () => {
           </div>
           <div className="sm:w-[650px] w-[350px]  ">
             <Slide direction="right">
-              <img className="rounded-xl" src={greeting} alt="Greeting" />
+              <img className="rounded-xl" src={greeting} alt="Greetings" />
             </Slide>
           </div>
         </div>
