@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import github from "../../assets/images/github.png";
@@ -9,9 +9,11 @@ import { errorToast, successToast } from "../../utils/Toast";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { logIn, googleLogin, githubLogin } = useContext(AuthContext);
+  const { logIn, googleLogin, githubLogin, resetPassword } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  const emailRef = useRef();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -54,6 +56,17 @@ const Login = () => {
       });
   };
 
+  const handleResetPassword = () => {
+    const email = emailRef.current.value;
+    resetPassword(email)
+      .then(() => {
+        successToast("Please check your email");
+      })
+      .catch((error) => {
+        errorToast(error.message);
+      });
+  };
+
   return (
     <div className="flex">
       <div className="flex-1  hidden xl:block">
@@ -74,6 +87,7 @@ const Login = () => {
               placeholder="Enter your email..."
               name="email"
               required
+              ref={emailRef}
             />
             <div className="relative">
               <input
@@ -91,7 +105,10 @@ const Login = () => {
               </span>
             </div>
 
-            <div className="mt-4 font-semibold underline">
+            <div
+              onClick={handleResetPassword}
+              className="mt-4 font-semibold underline"
+            >
               <Link>Forget Password?</Link>
             </div>
 

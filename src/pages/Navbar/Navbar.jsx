@@ -13,7 +13,7 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const signOut = () => {
-    successToast("Log Out Successfully 😢");
+    successToast("Log Out Successfully!");
     logOut().then().catch();
   };
 
