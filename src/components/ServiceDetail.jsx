@@ -3,14 +3,11 @@ import { useLoaderData, useParams } from "react-router-dom";
 const ServiceDetail = () => {
   const serviceItem = useLoaderData();
   const { id } = useParams();
-  // console.log(typeof id);
   const idInt = parseInt(id);
-  // console.log(typeof idInt);
 
   const service = Array.isArray(serviceItem)
     ? serviceItem.find((item) => item.id === idInt)
     : null;
-  //   console.log(service);
   return (
     <div className="flex gap-10 items-center justify-center py-20 bg-gray-50">
       <img className="rounded-t-xl h-[320px]  " src={service.img} alt={id} />

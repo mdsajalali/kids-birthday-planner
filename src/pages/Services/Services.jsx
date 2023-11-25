@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import Service from "../../components/Service";
 
 const Services = () => {
-  const [services, setServices] = useState([]);
-
-  // console.log(services);
+  const [services, setServices] = useState([]); 
 
   useEffect(() => {
     fetch("services.json")
