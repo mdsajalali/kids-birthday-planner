@@ -70,7 +70,7 @@ const Login = () => {
     <div className="flex">
       <div className="flex-1  hidden xl:block">
         <img
-          className="min-h-screen object-cover"
+          className="h-[800px] w-full object-cover"
           src={loginImg}
           alt="Login Img"
         />

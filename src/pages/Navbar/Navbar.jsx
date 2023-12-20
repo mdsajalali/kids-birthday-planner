@@ -3,7 +3,6 @@ import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo_beeparty.png";
-import Button from "../../components/Button";
 import { AuthContext } from "../../providers/AuthProvider";
 import { successToast } from "./../../utils/Toast";
 
@@ -94,9 +93,6 @@ const Navbar = () => {
               </NavLink>
             )}
           </ul>
-          <div className="text-white">
-            <Button title="GET STARTED" />
-          </div>
         </nav>
         <div
           className="cursor-pointer text-3xl xl:hidden "
