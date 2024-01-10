@@ -55,7 +55,7 @@ const Footer = () => {
                 insight, or promotions.
               </p>
               <input
-                className="w-[350px] outline-none border p-2 rounded-sm"
+                className="w-[320px] outline-none border p-2 rounded-sm"
                 type="email"
                 placeholder="Email"
               />

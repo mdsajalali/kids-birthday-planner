@@ -27,7 +27,7 @@ const GoToTop = () => {
   return (
     <div>
       {isVisible && (
-        <div className="fixed bottom-5 right-5">
+        <div className="fixed bottom-5 right-5 hidden sm:block">
           <h1
             onClick={goToBtn}
             className="bg-[#FFECC6] hover:bg-[#b8fa03] p-4 rounded-full cursor-pointer  animate-bounce transition-transform duration-300 ease-in-out"
